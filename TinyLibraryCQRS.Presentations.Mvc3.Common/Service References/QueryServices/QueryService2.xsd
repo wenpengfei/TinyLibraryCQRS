@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/TinyLibraryCQRS.Services.QueryServices.QueryDataObjects" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TinyLibraryCQRS.Services.QueryServices.QueryDataObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1093/QueryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="UserAccountDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AddressCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressStreet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AddressZip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AggregateRootId" type="xs:long" />
+      <xs:element minOccurs="0" name="BorrowedBooks" nillable="true" type="tns:ArrayOfBookTransferHistoryDataObject" />
+      <xs:element minOccurs="0" name="ContactPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UserAccountDataObject" nillable="true" type="tns:UserAccountDataObject" />
+  <xs:complexType name="ArrayOfBookTransferHistoryDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookTransferHistoryDataObject" nillable="true" type="tns:BookTransferHistoryDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookTransferHistoryDataObject" nillable="true" type="tns:ArrayOfBookTransferHistoryDataObject" />
+  <xs:complexType name="BookTransferHistoryDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BookAggregateRootId" type="xs:long" />
+      <xs:element minOccurs="0" name="BookID" type="ser:guid" />
+      <xs:element minOccurs="0" name="BorrowedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ISBN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Returned" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ReturnedDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookTransferHistoryDataObject" nillable="true" type="tns:BookTransferHistoryDataObject" />
+  <xs:simpleType name="AccountType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Admin" />
+      <xs:enumeration value="User" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="AccountType" nillable="true" type="tns:AccountType" />
+  <xs:complexType name="ArrayOfBookDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BookDataObject" nillable="true" type="tns:BookDataObject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBookDataObject" nillable="true" type="tns:ArrayOfBookDataObject" />
+  <xs:complexType name="BookDataObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AggregateRootId" type="xs:long" />
+      <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ISBN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Inventory" type="xs:int" />
+      <xs:element minOccurs="0" name="Pages" type="xs:int" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BookDataObject" nillable="true" type="tns:BookDataObject" />
+</xs:schema>

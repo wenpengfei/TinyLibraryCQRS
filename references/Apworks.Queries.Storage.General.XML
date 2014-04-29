@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Apworks.Queries.Storage.General</name>
+    </assembly>
+    <members>
+        <member name="T:Apworks.Queries.Storage.General.SqlQueryObjectStorage">
+            <summary>
+            Represents the SQL Server query object storage.
+            </summary>
+        </member>
+        <member name="M:Apworks.Queries.Storage.General.SqlQueryObjectStorage.#ctor(System.String,Apworks.Storage.IStorageMappingResolver)">
+            <summary>
+            Initializes a new instance of <c>SqlQueryObjectStorage</c> class.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="mappingResolver">The mapping resolver.</param>
+        </member>
+    </members>
+</doc>

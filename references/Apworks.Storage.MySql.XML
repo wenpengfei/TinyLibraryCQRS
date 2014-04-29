@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Apworks.Storage.MySql</name>
+    </assembly>
+    <members>
+        <member name="T:Apworks.Storage.MySql.MySqlStorage">
+            <summary>
+            Represents the MySql storage.
+            </summary>
+        </member>
+        <member name="T:Apworks.Storage.MySql.MySqlWhereClauseBuilder`1">
+            <summary>
+            Represents the where clause builder for MySql database.
+            </summary>
+            <typeparam name="TDataObject">The type of the data object which would be mapped to
+            a certain table in the relational database.</typeparam>
+        </member>
+        <member name="M:Apworks.Storage.MySql.MySqlWhereClauseBuilder`1.#ctor(Apworks.Storage.IStorageMappingResolver)">
+            <summary>
+            Initializes a new instance of the <c>MySqlWhereClauseBuilder&lt;TDataObject&gt;</c> class.
+            </summary>
+            <param name="mappingResolver">The <c>Apworks.Storage.IStorageMappingResolver</c>
+            instance which will be used for generating the mapped field names.</param>
+        </member>
+        <member name="P:Apworks.Storage.MySql.MySqlWhereClauseBuilder`1.ParameterChar">
+            <summary>
+            Gets a <c>System.Char</c> value which represents the leading character to be used by the
+            database parameter.
+            </summary>
+        </member>
+    </members>
+</doc>

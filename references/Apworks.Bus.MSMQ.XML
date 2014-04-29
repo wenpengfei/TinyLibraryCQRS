@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Apworks.Bus.MSMQ</name>
+    </assembly>
+    <members>
+        <member name="T:Apworks.Bus.MSMQ.MSMQCommandBus">
+            <summary>
+            Represents the command bus which uses Microsoft Message Queuing technology.
+            </summary>
+        </member>
+        <member name="T:Apworks.Bus.MSMQ.MSMQBus`1">
+            <summary>
+            Represents the base class for buses that are using Microsoft Message Queuing (MSMQ) technologies.
+            </summary>
+            <typeparam name="TMessage">The type of the message that should be stored in the queue.</typeparam>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBus`1.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <c>MSMQBus&lt;TMessage&gt;</c> class.
+            </summary>
+            <param name="path">The location of the queue.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBus`1.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of <c>MSMQBus&lt;TMessage&gt;</c> class.
+            </summary>
+            <param name="path">The location of the queue.</param>
+            <param name="useInternalTransaction">A <see cref="T:System.Boolean"/> value which indicates
+            whether the internal transaction should be used to manipulate the message queue.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBus`1.#ctor(Apworks.Bus.MSMQ.MSMQBusOptions)">
+            <summary>
+            Initializes a new instance of <c>MSMQBus&lt;TMessage&gt;</c> class.
+            </summary>
+            <param name="options">The instance of <see cref="T:Apworks.Bus.MSMQ.MSMQBusOptions"/> class
+            which contains the option information to initialize the message queue.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBus`1.SendMessage(`0,System.Messaging.MessageQueueTransaction)">
+            <summary>
+            Sends the specified message to the queue without locking.
+            </summary>
+            <param name="message">The message that is going to be sent.</param>
+            <param name="transaction">The <see cref="T:System.Messaging.MessageQueueTransaction"/> instance
+            which manages the MSMQ transaction.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBus`1.Dispose(System.Boolean)">
+            <summary>
+            Disposes the object.
+            </summary>
+            <param name="disposing">A <see cref="T:System.Boolean"/> value which indicates whether
+            the object should be disposed explicitly.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBus`1.Publish(`0)">
+            <summary>
+            Publishes the specified message to the bus.
+            </summary>
+            <param name="message">The message to be published.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBus`1.Publish(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Publishes a collection of messages to the bus.
+            </summary>
+            <param name="messages">The messages to be published.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBus`1.Clear">
+            <summary>
+            Clears the published messages waiting for commit.
+            </summary>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBus`1.Commit">
+            <summary>
+            Commits the transaction.
+            </summary>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBus`1.Rollback">
+            <summary>
+            Rollback the transaction.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBus`1.Path">
+            <summary>
+            Gets the location of the queue.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBus`1.EnableCache">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value which indicates whether 
+            to create and use a connection cache.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBus`1.SharedModeDenyReceive">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value which indicates whether
+            to grant exclusive read access to the first application that accesses
+            the queue.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBus`1.QueueAccessMode">
+            <summary>
+            Gets a <see cref="T:System.Messaging.QueueAccessMode"/> value which specifies the 
+            access mode for the queue at creation time.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBus`1.UseInternalTransaction">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value which indicates whether an internal transaction
+            should be used when manipulating the queue.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBus`1.DTCompatible">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value which indicates
+            whether the Unit of Work could support Microsoft Distributed
+            Transaction Coordinator (MS-DTC).
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBus`1.Committed">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value which indicates
+            whether the Unit of Work was successfully committed.
+            </summary>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQCommandBus.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <c>MSMQCommandBus</c> class.
+            </summary>
+            <param name="path">The location of the queue.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQCommandBus.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of <c>MSMQCommandBus</c> class.
+            </summary>
+            <param name="path">The location of the queue.</param>
+            <param name="useInternalTransaction">A <see cref="T:System.Boolean"/> value which indicates
+            whether the internal transaction should be used to manipulate the message queue.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQCommandBus.#ctor(Apworks.Bus.MSMQ.MSMQBusOptions)">
+            <summary>
+            Initializes a new instance of <c>MSMQCommandBus</c> class.
+            </summary>
+            <param name="options">The instance of <see cref="T:Apworks.Bus.MSMQ.MSMQBusOptions"/> class
+            which contains the option information to initialize the message queue.</param>
+        </member>
+        <member name="T:Apworks.Bus.MSMQ.MSMQBusOptions">
+            <summary>
+            Represents the options used for initializing the MSMQ buses.
+            </summary>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBusOptions.#ctor(System.String,System.Boolean,System.Boolean,System.Messaging.QueueAccessMode,System.Boolean,System.Messaging.IMessageFormatter)">
+            <summary>
+            Initializes a new instance of <c>MSMQBusOptions</c> class.
+            </summary>
+            <param name="path">The location of the queue referenced by this System.Messaging.MessageQueue,
+            which can be "." for the local computer.</param>
+            <param name="sharedModeDenyReceive">The <see cref="T:System.Boolean"/> value which indicates whether
+            the exclusive read access should be granted to the first application 
+            that accesses the queue.</param>
+            <param name="enableCache">The <see cref="T:System.Boolean"/> value which indicates whether
+            a connection cache should be created and used.</param>
+            <param name="queueAccessMode">The value that indicates the access mode for the queue.</param>
+            <param name="useInternalTransaction">The <see cref="T:System.Boolean"/> value which indicates whether the internal
+            transaction should be used when sending or receiving messages.</param>
+            <param name="messageFormatter">The formatter used to serialize an object into or deserialize
+            an object from the body of a message read from or written to the queue.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBusOptions.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <c>MSMQBusOptions</c> class.
+            </summary>
+            <param name="path">The location of the queue referenced by this System.Messaging.MessageQueue,
+            which can be "." for the local computer.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQBusOptions.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of <c>MSMQBusOptions</c> class.
+            </summary>
+            <param name="path">The location of the queue referenced by this System.Messaging.MessageQueue,
+            which can be "." for the local computer.</param>
+            <param name="useInternalTransaction">The <see cref="T:System.Boolean"/> value which indicates whether the internal
+            transaction should be used when sending or receiving messages.</param>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBusOptions.SharedModeDenyReceive">
+            <summary>
+            Gets or sets a <see cref="T:System.Boolean"/> value which indicates whether
+            the exclusive read access should be granted to the first application 
+            that accesses the queue.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBusOptions.EnableCache">
+            <summary>
+            Gets or sets a <see cref="T:System.Boolean"/> value which indicates whether
+            a connection cache should be created and used.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBusOptions.QueueAccessMode">
+            <summary>
+            Gets or sets a value that indicates the access mode for the queue.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBusOptions.Path">
+            <summary>
+            Gets or sets the location of the queue referenced by this System.Messaging.MessageQueue,
+            which can be "." for the local computer.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBusOptions.UseInternalTransaction">
+            <summary>
+            Gets or sets a <see cref="T:System.Boolean"/> value which indicates whether the internal
+            transaction should be used when sending or receiving messages.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.MSMQ.MSMQBusOptions.MessageFormatter">
+            <summary>
+            Gets or sets the formatter used to serialize an object into or deserialize
+            an object from the body of a message read from or written to the queue.
+            </summary>
+        </member>
+        <member name="T:Apworks.Bus.MSMQ.MSMQEventBus">
+            <summary>
+            Represents the event bus which uses the Microsoft Message Queuing technology.
+            </summary>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQEventBus.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of <c>MSMQEventBus</c> class.
+            </summary>
+            <param name="path">The location of the queue.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQEventBus.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of <c>MSMQEventBus</c> class.
+            </summary>
+            <param name="path">The location of the queue.</param>
+            <param name="useInternalTransaction">A <see cref="T:System.Boolean"/> value which indicates
+            whether the internal transaction should be used to manipulate the message queue.</param>
+        </member>
+        <member name="M:Apworks.Bus.MSMQ.MSMQEventBus.#ctor(Apworks.Bus.MSMQ.MSMQBusOptions)">
+            <summary>
+            Initializes a new instance of <c>MSMQEventBus</c> class.
+            </summary>
+            <param name="options">The instance of <see cref="T:Apworks.Bus.MSMQ.MSMQBusOptions"/> class
+            which contains the option information to initialize the message queue.</param>
+        </member>
+    </members>
+</doc>

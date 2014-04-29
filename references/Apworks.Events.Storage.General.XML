@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Apworks.Events.Storage.General</name>
+    </assembly>
+    <members>
+        <member name="T:Apworks.Events.Storage.General.SqlDomainEventStorage">
+            <summary>
+            Represents the domain event storage that uses SQL Server as the storage device.
+            </summary>
+        </member>
+        <member name="M:Apworks.Events.Storage.General.SqlDomainEventStorage.#ctor(System.String,Apworks.Storage.IStorageMappingResolver)">
+            <summary>
+            Initializes a new instance of <c>SqlDomainEventStorage</c> class.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="mappingResolver">The mapping resolver.</param>
+        </member>
+    </members>
+</doc>

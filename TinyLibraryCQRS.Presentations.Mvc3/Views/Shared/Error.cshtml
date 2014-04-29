@@ -1,0 +1,16 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Oops...";
+}
+
+<!--
+<h2>
+    Sorry, an error occurred while processing your request.
+</h2>
+-->
+
+<h3>@Model.Exception.Message</h3>
+<p>
+    Click @Html.ActionLink("Here", "Index", "Home") to return to the Home page.
+</p>

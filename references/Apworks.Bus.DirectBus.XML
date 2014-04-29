@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Apworks.Bus.DirectBus</name>
+    </assembly>
+    <members>
+        <member name="T:Apworks.Bus.DirectBus.DirectBus`1">
+            <summary>
+            Represents the message bus that will dispatch the messages immediately once
+            the bus is committed.
+            </summary>
+            <typeparam name="TMessage">The type of the message.</typeparam>
+        </member>
+        <member name="M:Apworks.Bus.DirectBus.DirectBus`1.#ctor(Apworks.Bus.IMessageDispatcher)">
+            <summary>
+            Initializes a new instance of <c>DirectBus&lt;TMessage&gt;</c> class.
+            </summary>
+            <param name="dispatcher">The <see cref="T:Apworks.Bus.IMessageDispatcher"/> which
+            dispatches messages in the bus.</param>
+        </member>
+        <member name="M:Apworks.Bus.DirectBus.DirectBus`1.Dispose(System.Boolean)">
+            <summary>
+            Disposes the object.
+            </summary>
+            <param name="disposing">A <see cref="T:System.Boolean"/> value which indicates whether
+            the object should be disposed explicitly.</param>
+        </member>
+        <member name="M:Apworks.Bus.DirectBus.DirectBus`1.Publish(`0)">
+            <summary>
+            Publishes the specified message to the bus.
+            </summary>
+            <param name="message">The message to be published.</param>
+        </member>
+        <member name="M:Apworks.Bus.DirectBus.DirectBus`1.Publish(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Publishes a collection of messages to the bus.
+            </summary>
+            <param name="messages">The messages to be published.</param>
+        </member>
+        <member name="M:Apworks.Bus.DirectBus.DirectBus`1.Clear">
+            <summary>
+            Clears the published messages waiting for commit.
+            </summary>
+        </member>
+        <member name="M:Apworks.Bus.DirectBus.DirectBus`1.Commit">
+            <summary>
+            Commits the transaction.
+            </summary>
+        </member>
+        <member name="M:Apworks.Bus.DirectBus.DirectBus`1.Rollback">
+            <summary>
+            Rollback the transaction.
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.DirectBus.DirectBus`1.DTCompatible">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value which indicates
+            whether the Unit of Work could support Microsoft Distributed
+            Transaction Coordinator (MS-DTC).
+            </summary>
+        </member>
+        <member name="P:Apworks.Bus.DirectBus.DirectBus`1.Committed">
+            <summary>
+            Gets a <see cref="T:System.Boolean"/> value which indicates
+            whether the Unit of Work was successfully committed.
+            </summary>
+        </member>
+        <member name="T:Apworks.Bus.DirectBus.DirectEventBus">
+            <summary>
+            Represents the event bus that will dispatch the events immediately once
+            the bus is committed.
+            </summary>
+        </member>
+        <member name="M:Apworks.Bus.DirectBus.DirectEventBus.#ctor(Apworks.Bus.IMessageDispatcher)">
+            <summary>
+            Initializes a new instance of <c>DirectEventBus</c> class.
+            </summary>
+            <param name="dispatcher">The <see cref="T:Apworks.Bus.IMessageDispatcher"/> which
+            dispatches messages in the bus.</param>
+        </member>
+        <member name="T:Apworks.Bus.DirectBus.DirectCommandBus">
+            <summary>
+            Represents the command bus that will dispatch the commands immediately once
+            the bus is committed.
+            </summary>
+        </member>
+        <member name="M:Apworks.Bus.DirectBus.DirectCommandBus.#ctor(Apworks.Bus.IMessageDispatcher)">
+            <summary>
+            Initializes a new instance of <c>DirectCommandBus</c> class.
+            </summary>
+            <param name="dispatcher">The <see cref="T:Apworks.Bus.IMessageDispatcher"/> which
+            dispatches messages in the bus.</param>
+        </member>
+    </members>
+</doc>

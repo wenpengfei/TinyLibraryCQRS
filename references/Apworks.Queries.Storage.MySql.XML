@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Apworks.Queries.Storage.MySql</name>
+    </assembly>
+    <members>
+        <member name="T:Apworks.Queries.Storage.MySql.MySqlQueryObjectStorage">
+            <summary>
+            Represents the MySQL query object storage.
+            </summary>
+        </member>
+        <member name="M:Apworks.Queries.Storage.MySql.MySqlQueryObjectStorage.#ctor(System.String,Apworks.Storage.IStorageMappingResolver)">
+            <summary>
+            Initializes a new instance of <c>MySqlQueryObjectStorage</c> class.
+            </summary>
+            <param name="connectionString">The connection string which is used by the database engine to 
+            connect to the specified database server.</param>
+            <param name="mappingResolver">The storage mapping resolver.</param>
+        </member>
+    </members>
+</doc>

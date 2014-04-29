@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QueryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1093/QueryService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1093/QueryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1093/QueryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TinyLibraryCQRS.Services.QueryServices.QueryDataObjects" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IQueryService_GetUserByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetUserByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetUserByEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmail" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetUserByEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ValidateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_ValidateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetAccountType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountType" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetAccountType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetBooks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooks" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetBooks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetBookByGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookByGuid" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetBookByGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBookByGuidResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetUserByGuid_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByGuid" />
+  </wsdl:message>
+  <wsdl:message name="IQueryService_GetUserByGuid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByGuidResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IQueryService">
+    <wsdl:operation name="GetUserByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetUserByUserName" message="tns:IQueryService_GetUserByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetUserByUserNameResponse" message="tns:IQueryService_GetUserByUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetUserByEmail" message="tns:IQueryService_GetUserByEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetUserByEmailResponse" message="tns:IQueryService_GetUserByEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/ValidateUser" message="tns:IQueryService_ValidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/ValidateUserResponse" message="tns:IQueryService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetAccountType" message="tns:IQueryService_GetAccountType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetAccountTypeResponse" message="tns:IQueryService_GetAccountType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBooks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetBooks" message="tns:IQueryService_GetBooks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetBooksResponse" message="tns:IQueryService_GetBooks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBookByGuid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetBookByGuid" message="tns:IQueryService_GetBookByGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetBookByGuidResponse" message="tns:IQueryService_GetBookByGuid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByGuid">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQueryService/GetUserByGuid" message="tns:IQueryService_GetUserByGuid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQueryService/GetUserByGuidResponse" message="tns:IQueryService_GetUserByGuid_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IQueryService" type="tns:IQueryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserByUserName">
+      <soap:operation soapAction="http://tempuri.org/IQueryService/GetUserByUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByEmail">
+      <soap:operation soapAction="http://tempuri.org/IQueryService/GetUserByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <soap:operation soapAction="http://tempuri.org/IQueryService/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccountType">
+      <soap:operation soapAction="http://tempuri.org/IQueryService/GetAccountType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBooks">
+      <soap:operation soapAction="http://tempuri.org/IQueryService/GetBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBookByGuid">
+      <soap:operation soapAction="http://tempuri.org/IQueryService/GetBookByGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByGuid">
+      <soap:operation soapAction="http://tempuri.org/IQueryService/GetUserByGuid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QueryService">
+    <wsdl:port name="BasicHttpBinding_IQueryService" binding="tns:BasicHttpBinding_IQueryService">
+      <soap:address location="http://localhost:1093/QueryService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

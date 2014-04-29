@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CommandService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1036/CommandService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1036/CommandService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1036/CommandService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TinyLibraryCQRS.Services.CommandServices.CommandDataObjects" />
+      <xsd:import schemaLocation="http://localhost:1036/CommandService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/TinyLibraryCQRS.Infrastructure" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICommandService_RegisterUserAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserAccount" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_RegisterUserAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_RegisterAdminAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterAdminAccount" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_RegisterAdminAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterAdminAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_AddBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBook" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_AddBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_UpdateBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBook" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_UpdateBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_UpdateUserAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserAccount" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_UpdateUserAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_BorrowBookToUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:BorrowBookToUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_BorrowBookToUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BorrowBookToUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_BorrowBookToUser_WCFServiceFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/TinyLibraryCQRS.Infrastructure" name="detail" element="q1:WCFServiceFault" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_ReturnBookFromUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnBookFromUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommandService_ReturnBookFromUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnBookFromUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICommandService">
+    <wsdl:operation name="RegisterUserAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommandService/RegisterUserAccount" message="tns:ICommandService_RegisterUserAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommandService/RegisterUserAccountResponse" message="tns:ICommandService_RegisterUserAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterAdminAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommandService/RegisterAdminAccount" message="tns:ICommandService_RegisterAdminAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommandService/RegisterAdminAccountResponse" message="tns:ICommandService_RegisterAdminAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommandService/AddBook" message="tns:ICommandService_AddBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommandService/AddBookResponse" message="tns:ICommandService_AddBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommandService/UpdateBook" message="tns:ICommandService_UpdateBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommandService/UpdateBookResponse" message="tns:ICommandService_UpdateBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommandService/UpdateUserAccount" message="tns:ICommandService_UpdateUserAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommandService/UpdateUserAccountResponse" message="tns:ICommandService_UpdateUserAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BorrowBookToUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommandService/BorrowBookToUser" message="tns:ICommandService_BorrowBookToUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommandService/BorrowBookToUserResponse" message="tns:ICommandService_BorrowBookToUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/ICommandService/BorrowBookToUserWCFServiceFaultFault" name="WCFServiceFaultFault" message="tns:ICommandService_BorrowBookToUser_WCFServiceFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBookFromUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICommandService/ReturnBookFromUser" message="tns:ICommandService_ReturnBookFromUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICommandService/ReturnBookFromUserResponse" message="tns:ICommandService_ReturnBookFromUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICommandService" type="tns:ICommandService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegisterUserAccount">
+      <soap:operation soapAction="http://tempuri.org/ICommandService/RegisterUserAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterAdminAccount">
+      <soap:operation soapAction="http://tempuri.org/ICommandService/RegisterAdminAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBook">
+      <soap:operation soapAction="http://tempuri.org/ICommandService/AddBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <soap:operation soapAction="http://tempuri.org/ICommandService/UpdateBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserAccount">
+      <soap:operation soapAction="http://tempuri.org/ICommandService/UpdateUserAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BorrowBookToUser">
+      <soap:operation soapAction="http://tempuri.org/ICommandService/BorrowBookToUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="WCFServiceFaultFault">
+        <soap:fault use="literal" name="WCFServiceFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReturnBookFromUser">
+      <soap:operation soapAction="http://tempuri.org/ICommandService/ReturnBookFromUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CommandService">
+    <wsdl:port name="BasicHttpBinding_ICommandService" binding="tns:BasicHttpBinding_ICommandService">
+      <soap:address location="http://localhost:1036/CommandService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    Tiny Library CQRS is an integrated application that demonstrates the implementation of Command-Query Responsibility Segregation (CQRS) architecture 
+    with Microsoft .NET technologies.<br /><br />
+    The main business purpose of Tiny Library CQRS is focusing on the demonstration of business rules and logic for a library domain. In Tiny Library CQRS,
+    there are two kinds of accounts: User Accounts and Admin Accounts. User Accounts would have the ability to change their account information, borrow books
+    from and return books to the library, whereas Admin Accounts are able to maintain the books. Although the business domain for Tiny Library CQRS is not
+    very complex, it indeed represented all necessary Domain Driven Design concepts, as well as an integrated solution built upon Microsoft .NET technologies.<br /><br />
+</p>
+<h4>Getting Started</h4>
+<p>
+    After successfully deployed and configured Tiny Library CQRS, you can logon as Administrator with <b>admin</b> account (password: <b>admin</b>). After logon, you
+    can navigate to the "Books" page, from where you can create new books for the library, and also maintain the basic and inventory information for each book by
+    clicking the "Edit" button. However for the current implementation of Tiny Library CQRS, you cannot review/edit your account profile when you logon as
+    Administrators.<br /><br />
+    You can also logon to Tiny Library CQRS with Regular Accounts. Tiny Library CQRS provides a <b>daxnet</b> regular account (password: <b>daxnet</b>) so that users could
+    getting started with regular account privileges. If you logon with this <b>daxnet</b> account, you would have the ability of reviewing the summary and detailed information
+    for all books, and you would also be able to borrow the book you like by hitting the "Borrow" button. After you have read the books, remember to return the book to the library
+    by clicking the "Return" button under My Account page. Compared with the Administrator accounts, Regular accounts don't have the privilege of maintaining the books.<br /><br />
+</p>
+<h4>What was demonstrated</h4>
+<p>Following concepts, methodologies, frameworks and technologies are included in this demonstration:</p>
+<ul>
+    <li>
+        Domain-Driven Design, Event-Driven Architecture & CQRS Architecture
+    </li>
+    <li>
+        Distributed System Solutions
+        <ul>
+            <li>Windows Communication Foundation</li>
+            <li>Windows Services</li>
+            <li>Microsoft Message Queuing (MSMQ)</li>
+            <li>Distributed Transaction Coordination</li>
+        </ul>
+    </li>
+    <li>
+        Implementing CQRS Architecture with <a href="http://apworks.codeplex.com" target="_blank">Apworks</a> Framework
+        <ul>
+            <li>Apworks framework configuration</li>
+            <li>Implementation of Entities, Value Objects, Aggregates, Aggregate Roots, Domain Events, Event Handlers, Commands, Command Handlers, Domain Services,
+            Domain Repositories, Event Stores, Snapshot Providers by using Apworks framework</li>
+            <li>Aspect Oriented Programming (AOP) and interception</li>
+            <li>Exception handling & logging</li>
+        </ul>
+    </li>
+    <li>
+        ASP.NET MVC 3
+        <ul>
+            <li>Authentication & Authorization integrated with CQRS architecture</li>
+            <li>Action Link extensions</li>
+            <li>Validation</li>
+            <li>Exception handling</li>
+        </ul>
+    </li>
+</ul>
+<h4>What was not demonstrated</h4>
+<p>Following items are not included in this demonstration:</p>
+<ul>
+    <li>Sagas</li>
+    <li>Business Workflows</li>
+    <li>Microsoft Biztalk integration</li>
+</ul>
+<h4>References</h4>
+<ul>
+    <li>Domain-Driven Design: <a href="http://www.domaindrivendesign.org" target="_blank">http://www.domaindrivendesign.org</a></li>
+    <li>Apworks Framework: <a href="http://apworks.codeplex.com" target="_blank">http://apworks.codeplex.com</a></li>
+</ul>

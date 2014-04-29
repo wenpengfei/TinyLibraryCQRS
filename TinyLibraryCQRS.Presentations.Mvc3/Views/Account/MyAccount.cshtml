@@ -1,0 +1,167 @@
+﻿@model TinyLibraryCQRS.Presentations.Mvc3.Common.QueryServices.UserAccountDataObject
+
+@{
+    ViewBag.Title = "Account - My Account";
+}
+
+<h2>My Account</h2>
+
+<fieldset>
+    <legend>Profile for @Html.DisplayFor(model => model.UserName)</legend>
+    <h4>Basic Information</h4>
+    <table>
+        <tr>
+            <th>
+                User Name
+            </th>
+            <th>
+                Display Name
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Contact Phone
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(m => m.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.DisplayName)
+            </td>
+            <td>
+                @Html.DisplayFor(m => m.Email)
+            </td>
+            <td>
+                @if (string.IsNullOrEmpty(Model.ContactPhone))
+                {
+                        @Html.Encode("N/A");
+                }
+                else
+                {
+                        @Html.DisplayFor(model => model.ContactPhone);
+                }
+            </td>
+        </tr>
+    </table>
+    <br />
+    <h4>Address Information</h4>
+    <table>
+        <tr>
+            <th>Country</th>
+            <th>State / Province</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>Zip Code</th>
+        </tr>
+        <tr>
+            <td>@if (!string.IsNullOrEmpty(Model.AddressCountry))
+                { 
+                    @Html.DisplayFor(m => m.AddressCountry)
+                }
+                else
+                { 
+                    @Html.Encode("N/A");
+                }
+            </td>
+            <td>@if (!string.IsNullOrEmpty(Model.AddressState))
+                { 
+                    @Html.DisplayFor(m => m.AddressState)
+                }
+                else
+                { 
+                    @Html.Encode("N/A");
+                }</td>
+            <td>@if (!string.IsNullOrEmpty(Model.AddressCity))
+                { 
+                    @Html.DisplayFor(m => m.AddressCity)
+                }
+                else
+                { 
+                    @Html.Encode("N/A");
+                }
+            </td>
+            <td>@if (!string.IsNullOrEmpty(Model.AddressStreet))
+                { 
+                    @Html.DisplayFor(m => m.AddressStreet)
+                }
+                else
+                { 
+                    @Html.Encode("N/A");
+                }
+                
+            </td>
+            <td>
+                @if (!string.IsNullOrEmpty(Model.AddressZip))
+                { 
+                    @Html.DisplayFor(m => m.AddressZip)
+                }
+                else
+                { 
+                    @Html.Encode("N/A");
+                }
+                
+            </td>
+        </tr>
+    </table>
+<p>
+    @Html.ActionLink("Edit Profile", "Edit", new { id = Model.ID }) &nbsp;
+    @Html.ActionLink("Back to Home", "Index", "Home")
+</p>
+</fieldset>
+
+<fieldset>
+    <legend>Book Transfer History</legend>
+    @if (Model.BorrowedBooks != null && Model.BorrowedBooks.Length > 0)
+    { 
+    <table>
+        <tr>
+            <th>Book Title</th>
+            <th>Book ISBN</th>
+            <th>Date Borrowed</th>
+            <th>Returned</th>
+            <th>Date Returned</th>
+            <th>Operations</th>
+        </tr>
+        @for (int i = 0; i < Model.BorrowedBooks.Length; i++)
+        { 
+            <tr>
+                <td>@Html.DisplayFor(p => p.BorrowedBooks[i].Title)</td>
+                <td>@Html.DisplayFor(p => p.BorrowedBooks[i].ISBN)</td>
+                <td>@Html.DisplayFor(p => p.BorrowedBooks[i].BorrowedDate)</td>
+                <td>@Html.DisplayFor(p => p.BorrowedBooks[i].Returned)</td>
+                <td>
+                    @if (Model.BorrowedBooks[i].Returned)
+                    { 
+                        @Html.DisplayFor(p => p.BorrowedBooks[i].ReturnedDate)
+                    }
+                    else
+                    { 
+                        @Html.Encode("N/A")
+                    }
+                </td>
+                <td>
+                    @if (!Model.BorrowedBooks[i].Returned)
+                    { 
+                        @Html.ActionLink("Return This Book", "Return", "Books", new { id = Model.BorrowedBooks[i].BookID }, new { onclick = "return confirm('Are you sure to return this book?');" })
+                    }
+                    else
+                    { 
+                        @Html.Encode("N/A")
+                    }
+                    
+                </td>
+            </tr>
+        }
+    </table>
+    }
+    else
+    { <br />
+        @Html.Encode("No history available for current user.");
+    }
+    <p>
+        @Html.ActionLink("Return to Books", "Index", "Books")
+    </p>
+</fieldset>

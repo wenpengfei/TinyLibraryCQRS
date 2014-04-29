@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Apworks.Storage.General</name>
+    </assembly>
+    <members>
+        <member name="T:Apworks.Storage.General.SqlStorage">
+            <summary>
+            Represents the SQL Server storage.
+            </summary>
+        </member>
+        <member name="M:Apworks.Storage.General.SqlStorage.#ctor(System.String,Apworks.Storage.IStorageMappingResolver)">
+            <summary>
+            Initializes a new instance of <c>SqlStorage</c> class.
+            </summary>
+            <param name="connectionString">The connection string.</param>
+            <param name="mappingResolver">The mapping resolver.</param>
+        </member>
+        <member name="M:Apworks.Storage.General.SqlStorage.CreateDatabaseConnection">
+            <summary>
+            Creates the database connection.
+            </summary>
+            <returns>The <see cref="T:System.Data.Common.DbConnection"/> instance which represents
+            the open connection to the relational database.</returns>
+        </member>
+        <member name="M:Apworks.Storage.General.SqlStorage.CreateParameter">
+            <summary>
+            Creates a database parameter object.
+            </summary>
+            <returns>The instance of database parameter object.</returns>
+        </member>
+        <member name="M:Apworks.Storage.General.SqlStorage.CreateCommand(System.String,System.Data.Common.DbConnection)">
+            <summary>
+            Creates a instance of the command object.
+            </summary>
+            <param name="sql">The SQL statement used for creating the command object.</param>
+            <returns>The instance of the command object.</returns>
+        </member>
+        <member name="M:Apworks.Storage.General.SqlStorage.CreateWhereClauseBuilder``1">
+            <summary>
+            Creates a new instance of the where clause builder.
+            </summary>
+            <typeparam name="T">The type of the object.</typeparam>
+            <returns>The instance of the where clause builder.</returns>
+        </member>
+        <member name="T:Apworks.Storage.General.Builders.SqlWhereClauseBuilder`1">
+            <summary>
+            Represents the WHERE clause builder for SQL Server database.
+            </summary>
+            <typeparam name="T">The type of the object that will be mapped to a single SQL Server data table.</typeparam>
+        </member>
+        <member name="M:Apworks.Storage.General.Builders.SqlWhereClauseBuilder`1.#ctor(Apworks.Storage.IStorageMappingResolver)">
+            <summary>
+            Initializes a new instance of <c>SqlWhereClauseBuilder&lt;T&gt;</c> class.
+            </summary>
+            <param name="mappingResolver">The storage mapping resolver instance.</param>
+        </member>
+        <member name="P:Apworks.Storage.General.Builders.SqlWhereClauseBuilder`1.ParameterChar">
+            <summary>
+            Gets a <c>System.Char</c> value which represents the leading character to be used by the
+            SQL Server parameter.
+            </summary>
+        </member>
+    </members>
+</doc>

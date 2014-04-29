@@ -1,0 +1,46 @@
+﻿@using TinyLibraryCQRS.Presentations.Mvc3.Common;
+@model TinyLibraryCQRS.Presentations.Mvc3.Common.QueryServices.BookDataObject
+
+@{
+    ViewBag.Title = "Books - Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>@Html.DisplayFor(model => model.Title)</legend>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">ISBN</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ISBN)
+    </div>
+
+    <div class="display-label">Author</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Author)
+    </div>
+
+    <div class="display-label">Description</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">Pages</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pages)
+    </div>
+
+    <div class="display-label">Inventory</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Inventory)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }, AuthorizationAccountType.Admin) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

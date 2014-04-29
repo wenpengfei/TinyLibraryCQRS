@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Apworks.Repositories.NHibernate</name>
+    </assembly>
+    <members>
+        <member name="T:Apworks.Repositories.NHibernate.NHibernateSpecificationParser">
+            <summary>
+            Represents the specification parser which converts the specifications to
+            <c>NHibernate.ICriteria</c> objects.
+            </summary>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateSpecificationParser.#ctor(NHibernate.ISession)">
+            <summary>
+            Initializes a new instance of <c>NHibernateSpecificationParser</c> class.
+            </summary>
+            <param name="session"></param>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateSpecificationParser.Parse``1(Apworks.Specifications.ISpecification{``0})">
+            <summary>
+            Parses the specification to the <c>NHibernate.ICriteria</c> objects.
+            </summary>
+            <typeparam name="TEntity">The type of the entity on which the specification should be applied.</typeparam>
+            <param name="specification">The instance of the specification.</param>
+            <returns>The converted <c>NHibernate.ICriteria</c> object.</returns>
+        </member>
+        <member name="T:Apworks.Repositories.NHibernate.NHibernateRepository`1">
+            <summary>
+            Represents the repository which supports the NHibernate implementation.
+            </summary>
+            <typeparam name="TAggregateRoot">The type of the aggregate root.</typeparam>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateRepository`1.#ctor(Apworks.Repositories.IRepositoryContext)">
+            <summary>
+            Initializes a new instance of <c>NHibernateRepository&lt;TAggregateRoot&gt;</c> class.
+            </summary>
+            <param name="context">The instance of the repository context.</param>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateRepository`1.DoAdd(`0)">
+            <summary>
+            Adds an entity to the repository.
+            </summary>
+            <param name="entity">The entity object to be added.</param>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateRepository`1.DoGetByKey(System.Object)">
+            <summary>
+            Gets the entity instance from repository by a given key.
+            </summary>
+            <param name="key">The key of the entity.</param>
+            <returns>The instance of the entity.</returns>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateRepository`1.DoGetAll(Apworks.Specifications.ISpecification{`0},System.Func{`0,System.Object},Apworks.Storage.SortOrder)">
+            <summary>
+            Gets all the aggregate roots that match the given specification, and sorts the aggregate roots
+            by using the provided sort predicate and the specified sort order.
+            </summary>
+            <param name="specification">The specification with which the aggregate roots should match.</param>
+            <param name="sortPredicate">The sort predicate which is used for sorting.</param>
+            <param name="sortOrder">The <see cref="!:Apworks.Enumerations.SortOrder"/> enum which specifies the sort order.</param>
+            <returns>All the aggregate roots that match the given specification and were sorted by using the given sort predicate and the sort order.</returns>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateRepository`1.DoRemove(`0)">
+            <summary>
+            Removes the entity from the repository.
+            </summary>
+            <param name="entity">The entity to be removed.</param>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateRepository`1.DoUpdate(`0)">
+            <summary>
+            Updates the entity in the repository.
+            </summary>
+            <param name="entity">The entity to be updated.</param>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateRepository`1.DoFindAll(Apworks.Specifications.ISpecification{`0},System.Func{`0,System.Object},Apworks.Storage.SortOrder)">
+            <summary>
+            Finds all the aggregate roots that match the given specification, and sorts the aggregate roots
+            by using the provided sort predicate and the specified sort order.
+            </summary>
+            <param name="specification">The specification with which the aggregate roots should match.</param>
+            <param name="sortPredicate">The sort predicate which is used for sorting.</param>
+            <param name="sortOrder">The <see cref="!:Apworks.Enumerations.SortOrder"/> enum which specifies the sort order.</param>
+            <returns>All the aggregate roots that match the given specification and were sorted by using the given sort predicate and the sort order.</returns>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateRepository`1.DoGet(Apworks.Specifications.ISpecification{`0})">
+            <summary>
+            Gets a single entity instance from repository by using the given specification.
+            </summary>
+            <param name="specification">The specification.</param>
+            <returns>The entity instance.</returns>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateRepository`1.DoFind(Apworks.Specifications.ISpecification{`0})">
+            <summary>
+            Finds a single aggregate root that matches the given specification.
+            </summary>
+            <param name="specification">The specification with which the aggregate root should match.</param>
+            <returns>The instance of the aggregate root.</returns>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateRepository`1.DoExists(Apworks.Specifications.ISpecification{`0})">
+            <summary>
+            Checkes whether the aggregate root which matches the given specification exists.
+            </summary>
+            <param name="specification">The specification with which the aggregate root should match.</param>
+            <returns>True if the aggregate root exists, otherwise false.</returns>
+        </member>
+        <member name="T:Apworks.Repositories.NHibernate.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_CREATE_CRITERIA_FROM_SPEC_FAIL">
+            <summary>
+              Looks up a localized string similar to Failed to create the NHibernate criteria from the given specification..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_DELETE_FAIL">
+            <summary>
+              Looks up a localized string similar to Unable to delete the object from the database via NHibernate session..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_FIND_FAIL">
+            <summary>
+              Looks up a localized string similar to Unable to find the required object from database via NHibernate session..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_FINDALL_FAIL">
+            <summary>
+              Looks up a localized string similar to Failed to find all the objects from database via NHibernate session..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_GETALL_FAIL">
+            <summary>
+              Looks up a localized string similar to Unable to get all the entities by specification. No entity can be found..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_GETBYKEY_FAIL">
+            <summary>
+              Looks up a localized string similar to Unable to get the object by key from database via NHibernate session..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_GETBYSPEC_FAIL">
+            <summary>
+              Looks up a localized string similar to Unable to get the object by specification..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_INIT_NH_DBSESSION_FAIL">
+            <summary>
+              Looks up a localized string similar to Failed to initialize the NHibernate database session object..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_INVALID_CONTEXT_TYPE">
+            <summary>
+              Looks up a localized string similar to Invalid type of Repository Context was assigned to NHibernate Repository implementation..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_OPEN_NH_SESSION_FAIL">
+            <summary>
+              Looks up a localized string similar to Failed to open the NHibernate database session..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_SAVE_FAIL">
+            <summary>
+              Looks up a localized string similar to NHibernate session failed to save the specified object..
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.Properties.Resources.EX_UPDATE_FAIL">
+            <summary>
+              Looks up a localized string similar to Unable to update the object in database via NHibernate session..
+            </summary>
+        </member>
+        <member name="T:Apworks.Repositories.NHibernate.NHibernateContext">
+            <summary>
+            Represents the repository context which supports NHibernate implementation.
+            </summary>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateContext.#ctor(NHibernate.Cfg.Configuration)">
+            <summary>
+            Initializes a new instance of <c>NHibernateContext</c> class.
+            </summary>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateContext.Dispose(System.Boolean)">
+            <summary>
+            Disposes the object.
+            </summary>
+            <param name="disposing">A <see cref="T:System.Boolean"/> value which indicates whether
+            the object should be disposed explicitly.</param>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateContext.GetRepository``1">
+            <summary>
+            Gets the repository instance from the transaction context according
+            to the given aggregate root type.
+            </summary>
+            <typeparam name="TAggregateRoot">The type of the aggregate root.</typeparam>
+            <returns>The repository instance.</returns>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateContext.Commit">
+            <summary>
+            Commits the transaction.
+            </summary>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.NHibernateContext.Rollback">
+            <summary>
+            Rollback the transaction.
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.NHibernateContext.Session">
+            <summary>
+            Gets the instance of the NHibernate Session object.
+            </summary>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.NHibernateContext.SpecificationParser">
+            <summary>
+            Gets the instance of the specification parser object.
+            </summary>
+        </member>
+        <member name="T:Apworks.Repositories.NHibernate.DatabaseSessionFactory">
+            <summary>
+            Represents the factory singleton for database session.
+            </summary>
+        </member>
+        <member name="F:Apworks.Repositories.NHibernate.DatabaseSessionFactory.sessionFactory">
+            <summary>
+            The session factory instance.
+            </summary>
+        </member>
+        <member name="F:Apworks.Repositories.NHibernate.DatabaseSessionFactory.session">
+            <summary>
+            The session instance.
+            </summary>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.DatabaseSessionFactory.#ctor(NHibernate.Cfg.Configuration)">
+            <summary>
+            Privately constructs the database session factory instance, configures the
+            NHibernate framework by using the assemblies listed in the configured spaces(paths)
+            that are decorated by <see cref="!:EntityVisibleAttribute"/>.
+            </summary>
+        </member>
+        <member name="M:Apworks.Repositories.NHibernate.DatabaseSessionFactory.OpenSession">
+            <summary>
+            Always opens a new session from the session factory.
+            </summary>
+            <returns>The newly opened session.</returns>
+            <exception cref="T:Apworks.Repositories.RepositoryException">Occurs when failed to open the NHibernate session.</exception>
+        </member>
+        <member name="P:Apworks.Repositories.NHibernate.DatabaseSessionFactory.Session">
+            <summary>
+            Gets the singleton instance of the session. If the session has not been
+            initialized or opened, it will return a newly opened session from the session factory.
+            </summary>
+        </member>
+    </members>
+</doc>
